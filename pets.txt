@@ -1,0 +1,7 @@
+Lucy,3,Labrador,Female,Dogs,John,john@email.com,dog1.jpg
+Jasper,1,Tabby,Male,Kids,Jake,Jake@email.com,cat2.jpg.avif
+Casper,2,German Shepard,Male,Dogs,Mike,Mike@email.com,dog2.jpg.webp
+Pony,1,Bengal,Male,Kids,Jane,Jane@email.com,cat.jpg
+Bob,3,Golden Retriever,Male,Dogs,Caleb,Caleb@email.com,dog3.jpg.avif
+Caty,1,Persian,Female,Kids,Helena,Helena@email.com,cat3.jpg.png
+Whiskers,2,Bengal,Female,Kids,Jen,Jen@email.com,cat4.jpgjakee,2,poodle,male,Cats/Kids,mikala,mikala@gmail.com,dog.jpg

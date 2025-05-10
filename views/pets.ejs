@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Available Pets</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="/js/script.js" defer></script>
+
+</head>
+<body>
+  <header class="header">
+    <a href="/"><img src="https://pngimg.com/uploads/paw/paw_PNG17.png" class="logo" alt="Logo"></a>
+    <h1>Guardian Paws Adoption</h1>
+    <div id="datetime" class="datetime"></div>
+  </header>
+
+  <div class="container">
+    <nav class="sidebar">
+      <ul>
+        <li><a href="/main">Home</a></li>
+        <li><a href="/pets">Browse Available Pets</a></li>
+        <li><a href="/care">Dog & Cat Care</a></li>
+        <li><a href="/give">Have a Pet to Give Away</a></li>
+        <li><a href="/contact">Contact Us</a></li>
+        <% if (!user) { %>
+          <li><a href="/login">Login</a></li>
+          <li><a href="/create">Create Account</a></li>
+        <% } else { %>
+          <li><a href="/logout">Logout (<%= user %>)</a></li>
+        <% } %>
+      </ul>
+    </nav>
+
+    <main class="content">
+      <h2>Available Pets</h2>
+
+      <% if (!pets || pets.length === 0) { %>
+        <p>No pets available at the moment. Please check back later.</p>
+      <% } else { %>
+        <div class="pet-listing">
+          <% pets.forEach(pet => { %>
+            <div class="pet">
+              <img src="/images/<%= pet.image %>" alt="<%= pet.name %>">
+              <p><strong>Name:</strong> <%= pet.name %></p>
+              <p><strong>Age:</strong> <%= pet.age %></p>
+              <p><strong>Breed:</strong> <%= pet.breed %></p>
+              <p><strong>Gender:</strong> <%= pet.gender %></p>
+              <p><strong>Gets along with:</strong> <%= pet.compatibility %></p>
+              <p><strong>Owner:</strong> <%= pet.owner %></p>
+              <p><strong>Email:</strong> <%= pet.email %></p>
+              <button>Interested</button>
+            </div>
+          <% }) %>
+        </div>
+      <% } %>
+    </main>
+    <footer class="footer">
+      <p>&copy; 2025 Guardian Paws Adoption. All rights reserved.</p>
+      <a href="#" onclick="toggleDisclaimer()">Privacy/Disclaimer Statement</a>
+    </footer>
+  </div>
+</body>
+</html>

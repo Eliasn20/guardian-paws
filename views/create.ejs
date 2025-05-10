@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Create Account</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="/js/script.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <a href="/"><img src="https://pngimg.com/uploads/paw/paw_PNG17.png" class="logo" alt="Logo"></a>
+    <h1>Guardian Paws Adoption</h1>
+    <div id="datetime" class="datetime"></div>
+  </header>
+
+  <div class="container">
+    <nav class="sidebar">
+      <ul>
+        <li><a href="/main">Home</a></li>
+        <li><a href="/pets">Browse Available Pets</a></li>
+        <li><a href="/care">Dog & Cat Care</a></li>
+        <li><a href="/give">Have a Pet to Give Away</a></li>
+        <li><a href="/contact">Contact Us</a></li>
+        <li><a href="/login">Login</a></li>
+        <li><a href="/create">Create Account</a></li>
+      </ul>
+    </nav>
+
+    <main class="content">
+      <h2>Create an Account</h2>
+      <form method="POST" action="/create">
+        <label>Username: <input type="text" name="username" required /></label><br>
+        <label>Password: <input type="password" name="password" required /></label><br>
+        <button type="submit">Create Account</button>
+      </form>
+    </main>
+    <footer class="footer">
+      <p>&copy; 2025 Guardian Paws Adoption. All rights reserved.</p>
+      <a href="#" onclick="toggleDisclaimer()">Privacy/Disclaimer Statement</a>
+    </footer>
+  </div>
+</body>
+</html>

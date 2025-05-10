@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Give a Pet</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="/js/script.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <a href="/"><img src="https://pngimg.com/uploads/paw/paw_PNG17.png" class="logo" alt="Logo"></a>
+    <h1>Guardian Paws Adoption</h1>
+    <div id="datetime" class="datetime"></div>
+  </header>
+
+  <div class="container">
+    <nav class="sidebar">
+      <ul>
+        <li><a href="/main">Home</a></li>
+        <li><a href="/pets">Browse Available Pets</a></li>
+        <li><a href="/care">Dog & Cat Care</a></li>
+        <li><a href="/give">Have a Pet to Give Away</a></li>
+        <li><a href="/contact">Contact Us</a></li>
+        <% if (!user) { %>
+          <li><a href="/login">Login</a></li>
+          <li><a href="/create">Create Account</a></li>
+        <% } else { %>
+          <li><a href="/logout">Logout (<%= user %>)</a></li>
+        <% } %>
+      </ul>
+    </nav>
+
+    <main class="content">
+      <% if (user) { %>
+      <h2>Submit a Pet for Adoption</h2>
+      <form action="/give" method="POST">
+        <label>Pet Name:
+          <input type="text" name="name" required>
+        </label><br>
+
+        <label>Type of Pet:
+          <select name="pet_type" required>
+            <option value="dog">Dog</option>
+            <option value="cat">Cat</option>
+          </select>
+        </label><br>
+
+        <label>Breed:
+          <input type="text" name="breed" required>
+        </label><br>
+
+        <label>Age:
+          <input type="text" name="age" required>
+        </label><br>
+
+        <label>Gender:
+          <select name="gender" required>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </label><br>
+
+        <label>Gets along with:</label><br>
+        <input type="checkbox" name="dogs_friendly"> Dogs
+        <input type="checkbox" name="cats_friendly"> Cats
+        <input type="checkbox" name="kids_friendly"> Kids<br>
+
+        <label>Additional Comments:<br>
+          <textarea name="comments" rows="4" cols="40"></textarea>
+        </label><br>
+
+        <label>Owner's Name:
+          <input type="text" name="owner_name" required>
+        </label><br>
+
+        <label>Owner's Email:
+          <input type="email" name="owner_email" required>
+        </label><br>
+
+        <button type="submit">Submit</button>
+      </form>
+      <% } else { %>
+        <h3>Please <a href="/login">log in</a> to submit a pet.</h3>
+      <% } %>
+    </main>
+    <footer class="footer">
+      <p>&copy; 2025 Guardian Paws Adoption. All rights reserved.</p>
+      <a href="#" onclick="toggleDisclaimer()">Privacy/Disclaimer Statement</a>
+    </footer>
+  </div>
+</body>
+</html>

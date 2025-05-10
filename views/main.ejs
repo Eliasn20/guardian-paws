@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Guardian Paws Adoption</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="/js/script.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <a href="/"><img src="https://pngimg.com/uploads/paw/paw_PNG17.png" class="logo" alt="Logo"></a>
+    <h1>Guardian Paws Adoption</h1>
+    <div id="datetime" class="datetime"></div>
+  </header>
+
+  <div class="container">
+    <nav class="sidebar">
+      <ul>
+        <li><a href="/main">Home</a></li>
+        <li><a href="/pets">Browse Available Pets</a></li>
+        <li><a href="/care">Dog & Cat Care</a></li>
+        <li><a href="/give">Have a Pet to Give Away</a></li>
+        <li><a href="/contact">Contact Us</a></li>
+        <% if (!user) { %>
+          <li><a href="/login">Login</a></li>
+          <li><a href="/create">Create Account</a></li>
+        <% } else { %>
+          <li><a href="/logout">Logout (<%= user %>)</a></li>
+        <% } %>
+      </ul>
+    </nav>
+
+    <main class="content">
+      <h2>Welcome to the Adopt a Dog/Cat website! Here you can find the perfect pet</h2>
+      <br>
+      <p>At Guardian Paws Adoption, we connect loving families with pets in need. Our mission is to provide a safe, caring, and responsible adoption process, ensuring every pet finds their perfect forever home. Whether you're looking for a playful pup, a cuddly kitten, or a loyal companion, we’re here to help you every step of the way. Give a pet a second chance and experience the joy of unconditional love.</p>
+      <br>
+      <p><strong>Adopt. Love. Protect.</strong></p>
+
+      
+      <div id="privacy-content" class="privacy-popup" style="display:none;">
+        <h3>Privacy & Disclaimer Statement</h3>
+        <p>This website does not collect personal data except from forms voluntarily submitted by users.</p>
+        <p>The website builder is not responsible for incorrect information submitted by pet owners.</p>
+        <a href="#" onclick="toggleDisclaimer()">Close</a>
+      </div>
+    </main>
+    <footer class="footer">
+      <p>&copy; 2025 Guardian Paws Adoption. All rights reserved.</p>
+      <a href="#" onclick="toggleDisclaimer()">Privacy/Disclaimer Statement</a>
+    </footer>
+  </div>
+</body>
+</html>
